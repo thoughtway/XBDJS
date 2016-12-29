@@ -1,3 +1,4 @@
+//本组件自动设置HTML的font-size，作为整个应用的rem值。
 (function(win){
 	var v = null
 		,initial_scale = null
@@ -62,6 +63,7 @@
 		this.resize();
 	}
 	
+	//如果需要捕捉reszie事件，得到实例以后，直接调用该方法。参数isattah为false时，取消resize事件绑定。
 	winrem_mod.prototype.attach_resize = function(isattach)
 	{
 		if (undefined == isattach)
@@ -144,12 +146,12 @@
 		if (Math.abs(domWidth / 33.75 - 14) > Math.abs(domHeight / 47 - 14))
 		{
 			win.rem = domHeight / 47;
-			console.log("deps Height");
+			//console.log("deps Height");
 		}
 		else
 		{
 			win.rem = domWidth / 33.75;
-			console.log("deps width");
+			//console.log("deps width");
 		}
 			
 		
